@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Fetch</title>
+		<script>
+			 
+			function fetchdata(){
+				fetch('/files/employee.json')
+				.then(function(response)
+				{
+				return response.json();
+				
+				})
+				.then(function(obj)
+				{
+				document.querySelector("#container").innerHTML=JSON.stringify.obj;
+				
+				})
+			.catch(function(error)
+			{
+			console.log(error.message);
+			})
+				}
+		</script>
+	</head>
+	<body>
+		<button onclick="fetchdata()">Fetch Data</button>
+		<div id="container"></div>
+	</body>
+</html>

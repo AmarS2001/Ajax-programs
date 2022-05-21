@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<style>
+			.g1{position:relative; width:10%}
+		</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+			function getdata()
+			{
+			mydat = { myData: 'This is my data.', myName:'Prateek' }
+			$.ajax('submit.php', { 
+			method: 'POST',
+			data: mydat,
+			success: function (data, status, xhr) {	
+			// success callback function
+			$('div').html('status: ' + status + ', data: ' + data); 
+			}, 
+			error: function (jqXhr, textStatus, errorMessage) {
+			console.log('Error' + errorMessage); 
+					} 
+				});
+				}
+			
+		</script>
+	</head>
+	<body>
+		<button onclick="getdata()">Get Data</button>
+		<div id="div"></div>
+	</body>
+</html>

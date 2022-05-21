@@ -1,0 +1,27 @@
+<!--jQuery $.post() Method - The $.post() method requests data from the server using an HTTP POST request.
+Syntax:
+$.post(URL,data,callback);
+The required URL parameter specifies the URL you wish to request.
+The optional data parameter specifies some data to send along with the request.
+The optional callback parameter is the name of a function to be executed if the request succeeds.-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.post("/files/simple.txt",
+    function(data,status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>HTTP POST request and get the result </button>
+
+</body>
+</html>
